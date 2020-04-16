@@ -1,6 +1,8 @@
 import React from 'react'
 import './Sign_In.scss'
 import FormInput from './Form_Input_Sign_in/Form_Input.comp'
+import CustomButton from '../Custom_Button/Custom_Button_component'
+import { signInWithGoogle } from '../../Firebase/Firebase_Util'
 
 class SignIn extends React.Component {
     constructor() {
@@ -25,19 +27,20 @@ class SignIn extends React.Component {
     render() {
         return (
             <div className='sign-in'>
-                <h2>I already have a account</h2>
-                <span>Sign In with your email and password</span>
+                <h2 className='title'>I already have a account</h2>
+                <span>Sign in with your email and password</span>
                 <form onSubmit={this.handleSubmit}>
 
                     <FormInput type='email' name='email' value={this.state.email}
-                        handleChange={this.handleChange} label='email'
+                        handleChange={this.handleChange} label='Email'
                     />
                     <br />
 
                     <FormInput type='password' name='password' value={this.state.password}
-                        handleChange={this.handleChange} label='password'
+                        handleChange={this.handleChange} label='Password'
                     /><br />
-                    <input type='submit' value='Submit Form' />
+                    <CustomButton type='submit' > SIGN IN</CustomButton>
+                    <CustomButton onClick={signInWithGoogle}> SIGN IN WITH GOOGLE</CustomButton>
                 </form>
 
             </div>
