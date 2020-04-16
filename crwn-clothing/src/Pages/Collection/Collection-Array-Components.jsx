@@ -18,15 +18,9 @@ class CollectionArray extends React.Component {
                 {
                     this.state.collectionArray.map(({ id, ...args }) => (
                         < ShopHomePage key={id} {...args} />
-
                     ))
-
                 }
-
             </div>
-
-
-
         );
     }
 }

@@ -7,7 +7,6 @@ const SignInandSignUp = () => {
         <div>
             <SignIn />
         </div>
-
     );
 }
 export default SignInandSignUp;
