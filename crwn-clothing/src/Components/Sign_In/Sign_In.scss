@@ -1,5 +1,5 @@
 .sign-in {
-  width: 30vw;
+  width: 380px;
   display: flex;
   flex-direction: column;
 
@@ -8,5 +8,9 @@
   }
   .submit {
     margin-left: 20px;
+  }
+  .buttons {
+    display: flex;
+    justify-content: space-between;
   }
 }
