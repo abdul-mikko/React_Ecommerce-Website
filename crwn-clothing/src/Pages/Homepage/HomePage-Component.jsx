@@ -7,7 +7,7 @@ import DirectoryMenu from '../../Components/Directory-menu/Directory-menu';
 export default function HomePageComponent() {
     return (
         <div className="homepage">
-            < DirectoryMenu />
+            <DirectoryMenu />
         </div>
     );
 }
