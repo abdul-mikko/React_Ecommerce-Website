@@ -16,6 +16,30 @@ const firebaseConfig = {
     measurementId: "G-XQML909L9S"
 };
 
+export const createUserProfileDocument = async (userAuth, additinaldata) => {
+    if (!userAuth) return;
+
+    const userRef = firestore.doc(`users/${userAuth.uid}`);
+    const snapshot = await userRef.get();
+    console.log(snapshot)
+
+    if (!snapshot.exists) {
+        const { displayName, email } = userAuth;
+        const createdAt = new Date();
+        try {
+            await userRef.set({
+                displayName,
+                email,
+                createdAt,
+                ...additinaldata
+            })
+        } catch (err) {
+            console.log("error catching user", err.message)
+        }
+
+    }
+    return userRef;
+}
 
 firebase.initializeApp(firebaseConfig);
 
