@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { ReactComponent as Logo } from "./original.svg";
 import { connect } from "react-redux";
 import CartIcon from "../cart-item/cart-item-component";
+import CartDropdow from "../cart-dropdown/cart-dropdown.comp";
+
 const Header = ({ currentUser }) => {
   return (
     <div className="header">
@@ -32,6 +34,7 @@ const Header = ({ currentUser }) => {
         )}
         <CartIcon />
       </div>
+      <CartDropdow />
     </div>
   );
 };
